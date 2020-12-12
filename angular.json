@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "dev-analytics-frontend"
+  "defaultProject": "dev-analytics-frontend",
+  "cli": {
+    "analytics": "5734709f-927e-4e35-a897-842be68e7f74"
+  }
 }
