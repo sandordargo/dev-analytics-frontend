@@ -1,0 +1,18 @@
+<p>api-key-form works!</p>
+
+<form [formGroup]="form" novalidate autocomplete="off">
+  <div class="form-group">
+    <label for="apiKey">DEV Api Key</label>
+    <input type="text" class="form-control" id="apiKey"
+    formControlName="apiKey"
+    (keyup.Enter)="getStats()">
+  </div>
+</form>
+
+<button type="button"
+ class="btn btn-primary"
+ (click)="getStats()">Get my stats!</button>
+
+ <p> Fetched key {{ x }} times</p>
+ 
+ <app-main-statistics></app-main-statistics>

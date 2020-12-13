@@ -2,15 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ApiKeyFormComponent } from './api-key-form/api-key-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { MainStatisticsComponent } from './main-statistics/main-statistics.component';
+import {StatsService} from './stats.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ApiKeyFormComponent,
+    MainStatisticsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [StatsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
