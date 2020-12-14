@@ -6,6 +6,7 @@ import { ApiKeyFormComponent } from './api-key-form/api-key-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MainStatisticsComponent } from './main-statistics/main-statistics.component';
 import {StatsService} from './stats.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {StatsService} from './stats.service';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]

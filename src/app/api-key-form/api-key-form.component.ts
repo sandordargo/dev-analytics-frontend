@@ -14,6 +14,7 @@ export class ApiKeyFormComponent implements OnInit {
   form: FormGroup;
   msc: MainStatisticsComponent;
   x = 0;
+  content: any;
 
   constructor(public fb: FormBuilder, private statsService: StatsService) {
     this.form = fb.group({
@@ -26,10 +27,9 @@ export class ApiKeyFormComponent implements OnInit {
   }
 
   getStats(): void {
-    console.log("Get stats");
     this.x += 1;
-    this.statsService.getStats("someKay");
-    this.msc.doSomething();
+    const reply = this.statsService.getStats("someKey");
+    reply.then(value => this.content = JSON.stringify(value));
   }
 
 }
