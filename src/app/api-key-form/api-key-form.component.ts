@@ -28,7 +28,9 @@ export class ApiKeyFormComponent implements OnInit {
 
   getStats(): void {
     this.x += 1;
-    const reply = this.statsService.getStats("someKey");
+    const key = this.form.get('apiKey')?.value;
+    console.log(key);
+    const reply = this.statsService.getStats(key);
     reply.then(value => this.content = JSON.stringify(value));
   }
 
