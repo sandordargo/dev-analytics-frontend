@@ -7,6 +7,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { MainStatisticsComponent } from './main-statistics/main-statistics.component';
 import {StatsService} from './stats.service';
 import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]

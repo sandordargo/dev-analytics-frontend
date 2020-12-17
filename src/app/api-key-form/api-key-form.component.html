@@ -15,3 +15,23 @@
 
  <p> Fetched key {{ x }} times</p>
  <div style="word-wrap: break-word;"> Backend content is {{ content }} </div>
+
+ <table class="table table-striped">
+   <thead>
+     <th>Key</th>
+     <th>Value</th>
+   </thead>
+   <tbody>
+     <tr *ngFor="let c of articleStats">
+       <td>
+          {{ c.key }}
+       </td>
+       <td>
+        {{ c.value }}
+      </td>
+
+     </tr>
+   </tbody>
+ </table>
+
+

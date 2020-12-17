@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import {StatsService} from '../stats.service';
 import {MainStatisticsComponent} from '../main-statistics/main-statistics.component';
+import StatsElement from '../StatsElement';
 
 @Component({
   selector: 'app-api-key-form',
@@ -15,6 +16,8 @@ export class ApiKeyFormComponent implements OnInit {
   msc: MainStatisticsComponent;
   x = 0;
   content: any;
+  jsonContent: any;
+  articleStats: StatsElement[] = [];
 
   constructor(public fb: FormBuilder, private statsService: StatsService) {
     this.form = fb.group({
@@ -29,9 +32,17 @@ export class ApiKeyFormComponent implements OnInit {
   getStats(): void {
     this.x += 1;
     const key = this.form.get('apiKey')?.value;
-    console.log(key);
     const reply = this.statsService.getStats(key);
-    reply.then(value => this.content = JSON.stringify(value));
+
+    reply.then(value => {
+      this.content = JSON.stringify(value);
+      this.jsonContent = value;
+      Object.keys(this.jsonContent['article_analytics']).forEach(key => {
+        this.articleStats.push(
+          new StatsElement(key, this.jsonContent['article_analytics'][key]));
+      });
+    });
+
   }
 
 }
