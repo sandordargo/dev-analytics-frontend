@@ -1,5 +1,3 @@
-<p>api-key-form works!</p>
-
 <form [formGroup]="form" novalidate autocomplete="off">
   <div class="form-group">
     <label for="apiKey">DEV Api Key</label>
@@ -13,9 +11,6 @@
  class="btn btn-primary"
  (click)="getStats()">Get my stats!</button>
 
- <p> Fetched key {{ x }} times</p>
- <div style="word-wrap: break-word;"> Backend content is {{ content }} </div>
-
  <table class="table table-striped">
    <thead>
      <th>Key</th>
@@ -24,7 +19,7 @@
    <tbody>
      <tr *ngFor="let c of articleStats">
        <td>
-          {{ c.key }}
+          {{ c.label }}
        </td>
        <td>
         {{ c.value }}
