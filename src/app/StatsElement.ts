@@ -10,46 +10,17 @@ export default class StatsElement {
 }
 
 const LABELS: {[name: string]: string} = {
-  numberOfArticles: 'Number of articles you posted'
+  numberOfArticles: 'Number of articles you posted',
+  totalViews: 'Number of views your articles got',
+  totalComments: 'Number of comments your articles received',
+  mostViewedArticleRatioToTotal: 'Views of your most viewed article / total views',
+  mostReactedArticleRatioToTotal: 'Reactions of your most reacted article / total reactions',
+  mostCommentedArticleRatioToTotal: 'Comments of your most commented article / total comments',
+  percentageOfArticlesGiving80PercentOfViews: 'The percentage of articles representing 80% of total views',
+  percentageOfArticlesGiving95PercentOfViews: 'The percentage of articles representing 95% of total views',
+  percentageOfArticlesGiving80PercentOfReactions: 'The percentage of articles representing 80% of total reactions',
+  percentageOfArticlesGiving95PercentOfReactions: 'The percentage of articles representing 95% of total reactions',
+  percentageOfArticlesGiving80PercentOfComments: 'The percentage of articles representing 80% of total comments',
+  percentageOfArticlesGiving95PercentOfComments: 'The percentage of articles representing 95% of total comments',
 };
 
-// const LABELS2 = {
-//   numberOfArticles: {
-//     en: 'Number of articles you posted'
-// },
-// totalViews: {
-//   en: 'Number of views your articles got'
-// },
-// totalComments: {
-//   en: 'Number of comments your articles received'
-// },
-// mostViewedArticleRatioToTotal: {
-//   en: 'Views of your most viewed article / total views'
-// },
-// mostReactedArticleRatioToTotal: {
-//   en: 'Reactions of your most reacted article / total reactions'
-// },
-// mostCommentedArticleRatioToTotal: {
-//   en: 'Comments of your most commented article / total comments'
-// },
-// percentageOfArticlesGiving80PercentOfViews: {
-//   en: 'The percentage of articles representing 80% of total views'
-// },
-// percentageOfArticlesGiving95PercentOfViews: {
-//   en: 'The percentage of articles representing 95% of total views'
-// },
-// percentageOfArticlesGiving80PercentOfReactions: {
-//   en: 'The percentage of articles representing 80% of total reactions'
-// },
-// percentageOfArticlesGiving95PercentOfReactions: {
-//   en: 'The percentage of articles representing 95% of total reactions'
-// },
-// percentageOfArticlesGiving80PercentOfComments: {
-//   en: 'The percentage of articles representing 80% of total comments'
-// },
-// percentageOfArticlesGiving95PercentOfComments: {
-//   en: 'The percentage of articles representing 95% of total comments'
-// },
-
-
-// };
