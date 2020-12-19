@@ -11,6 +11,7 @@
  class="btn btn-primary"
  (click)="getStats()">Get my stats!</button>
 
+ <h2>Here are some statistics of your articles</h2>
  <table class="table table-striped">
    <thead>
      <th>Key</th>
@@ -22,11 +23,33 @@
           {{ c.label }}
        </td>
        <td>
-        {{ c.value }}
+        {{ c.value | number:'1.0-2' }}
       </td>
-
      </tr>
    </tbody>
  </table>
+
+ <h2>Here are some statistics of the tags you use</h2>
+ <table class="table table-striped">
+  <thead>
+    <th></th>
+    <th>Tag</th>
+    <th>Value</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of tagStats">
+      <td>
+         {{ c.label }}
+      </td>
+      <td>
+        {{ c.tag }}
+     </td>
+      <td>
+       {{ c.value }}
+     </td>
+    </tr>
+  </tbody>
+</table>
+
 
 

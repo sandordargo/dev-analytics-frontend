@@ -1,6 +1,6 @@
-export default class StatsElement {
+export default class TagStatsElement {
   public label: string;
-  constructor(public key: string, public value: string) {
+  constructor(public key: string, public tag: string, public value: string) {
     if (key in LABELS) {
       this.label = LABELS[key];
     } else {
