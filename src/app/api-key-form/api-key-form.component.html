@@ -1,55 +1,163 @@
-<form [formGroup]="form" novalidate autocomplete="off">
-  <div class="form-group">
-    <label for="apiKey">DEV Api Key</label>
-    <input type="text" class="form-control" id="apiKey"
-    formControlName="apiKey"
-    (keyup.Enter)="getStats()">
+<div class="main-page">
+  <div class="jumbotron">
+  <h1>Welcome to <a href="https://dev.to/sandordargo">
+    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" style="width:1.25 em; height:auto" alt="Sandor Dargo's DEV Profile" height="30" width="30">
+    </a>Analytics
+  </h1>
   </div>
-</form>
-
-<button type="button"
- class="btn btn-primary"
- (click)="getStats()">Get my stats!</button>
-
- <h2>Here are some statistics of your articles</h2>
- <table class="table table-striped">
-   <thead>
-     <th>Key</th>
-     <th>Value</th>
-   </thead>
-   <tbody>
-     <tr *ngFor="let c of articleStats">
-       <td>
-          {{ c.label }}
-       </td>
-       <td>
-        {{ c.value | number:'1.0-2' }}
-      </td>
-     </tr>
-   </tbody>
- </table>
-
- <h2>Here are some statistics of the tags you use</h2>
- <table class="table table-striped">
-  <thead>
-    <th></th>
-    <th>Tag</th>
-    <th>Value</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let c of tagStats">
-      <td>
-         {{ c.label }}
-      </td>
-      <td>
-        {{ c.tag }}
-     </td>
-      <td>
-       {{ c.value }}
-     </td>
-    </tr>
-  </tbody>
-</table>
-
-
-
+  <div class="container">
+  <p>Get some insight on how your articles perform</p>
+  <p>If you don't have an API Key, go to <a href="https://dev.to/settings/account" target="_blank">your settings/account</a> and generate one</p>
+  <form [formGroup]="form" novalidate autocomplete="off">
+    <div class="form-group">
+      <input type="text" class="form-control" id="apiKey"
+          formControlName="apiKey"
+          placeholder="Insert your DEV Api Key here"
+          (keyup.Enter)="getStats()">
+    </div>
+  </form>
+  <button type="button"
+    class="btn btn-primary"
+    (click)="getStats()">Get my stats!</button>
+  <div [hidden]="!loaded">
+    <div class="stats-category">
+      <h2>High level statistics</h2>
+      <div class="row">
+          <div class="column">
+            <div class="card">
+                <div class="card-label"> {{ articlesWritten.label }} </div>
+                <div class="card-value"> {{ articlesWritten.value | number:'1.0':'en-US' }} </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+                <div class="card-label">{{ totalViews.label }}</div>
+                <div class="card-value">{{ totalViews.value | number:'1.0':'en-US' }}</div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+                <div class="card-label">{{ totalReactions.label }}</div>
+                <div class="card-value">{{ totalReactions.value | number:'1.0':'en-US' }}</div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+                <div class="card-label">{{ totalComments.label }}</div>
+                <div class="card-value">{{ totalComments.value | number:'1.0':'en-US' }}</div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="stats-category">
+      <h2>Some statistics on your most popular posts</h2>
+      <div class="row">
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ mostViewedArticleRatioToTotal.label }}</div>
+              <div class="card-value">{{ mostViewedArticleRatioToTotal.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ mostReactedArticleRatioToTotal.label }}</div>
+              <div class="card-value">{{ mostReactedArticleRatioToTotal.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ mostCommentedArticleRatioToTotal.label }}</div>
+              <div class="card-value">{{ mostCommentedArticleRatioToTotal.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-category">
+      <h2>Relative weight of your most popular posts</h2>
+      <div class="row">
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ percentageOfArticlesGiving80PercentOfViews.label }}</div>
+              <div class="card-value">{{ percentageOfArticlesGiving80PercentOfViews.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ percentageOfArticlesGiving80PercentOfReactions.label }}</div>
+              <div class="card-value">{{ percentageOfArticlesGiving80PercentOfReactions.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ percentageOfArticlesGiving80PercentOfComments.label }}</div>
+              <div class="card-value">{{ percentageOfArticlesGiving80PercentOfComments.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ percentageOfArticlesGiving95PercentOfViews.label }}</div>
+              <div class="card-value">{{ percentageOfArticlesGiving95PercentOfViews.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ percentageOfArticlesGiving95PercentOfReactions.label }}</div>
+              <div class="card-value">{{ percentageOfArticlesGiving95PercentOfReactions.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ percentageOfArticlesGiving95PercentOfComments.label }}</div>
+              <div class="card-value">{{ percentageOfArticlesGiving95PercentOfComments.value | number:'1.1-2':'en-US' }}%</div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-category">
+      <h2>Some statistics on your most popular tags</h2>
+      <div class="row">
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ mostCommentedTag.label }}: {{ mostCommentedTag.tag }}</div>
+              <div class="card-value">{{ mostCommentedTag.value | number:'1.0':'en-US' }}</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ mostReactedTag.label }}: {{ mostReactedTag.tag }}</div>
+              <div class="card-value">{{ mostReactedTag.value | number:'1.0':'en-US' }}</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ mostViewedTag.label }}: {{ mostViewedTag.tag }}</div>
+              <div class="card-value">{{ mostViewedTag.value | number:'1.0':'en-US' }}%</div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ tagWithMostCommentsPerArticle.label }}: {{ tagWithMostCommentsPerArticle.tag }}</div>
+              <div class="card-value">{{ tagWithMostCommentsPerArticle.value | number:'1.0-2':'en-US' }}</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ tagWithMostReactionsPerArticle.label }}: {{ tagWithMostReactionsPerArticle.tag }}</div>
+              <div class="card-value">{{ tagWithMostReactionsPerArticle.value | number:'1.0-2':'en-US' }}</div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+              <div class="card-label">{{ tagWithMostViewsPerArticle.label }}: {{ tagWithMostViewsPerArticle.tag }}</div>
+              <div class="card-value">{{ tagWithMostViewsPerArticle.value | number:'1.0-2':'en-US' }}</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
