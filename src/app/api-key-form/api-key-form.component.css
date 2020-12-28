@@ -31,3 +31,7 @@
 .form-control {
   background-color: whitesmoke;
 }
+
+.tag-name {
+  font-weight: bold;
+}

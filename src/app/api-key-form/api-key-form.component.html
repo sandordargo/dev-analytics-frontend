@@ -23,25 +23,25 @@
     <div class="stats-category">
       <h2>High level statistics</h2>
       <div class="row">
-          <div class="column">
+          <div class="column" style="width: 50%;">
             <div class="card">
                 <div class="card-label"> {{ articlesWritten.label }} </div>
                 <div class="card-value"> {{ articlesWritten.value | number:'1.0':'en-US' }} </div>
             </div>
           </div>
-          <div class="column">
+          <div class="column" style="width: 50%;">
             <div class="card">
                 <div class="card-label">{{ totalViews.label }}</div>
                 <div class="card-value">{{ totalViews.value | number:'1.0':'en-US' }}</div>
             </div>
           </div>
-          <div class="column">
+          <div class="column" style="width: 50%;">
             <div class="card">
                 <div class="card-label">{{ totalReactions.label }}</div>
                 <div class="card-value">{{ totalReactions.value | number:'1.0':'en-US' }}</div>
             </div>
           </div>
-          <div class="column">
+          <div class="column" style="width: 50%;">
             <div class="card">
                 <div class="card-label">{{ totalComments.label }}</div>
                 <div class="card-value">{{ totalComments.value | number:'1.0':'en-US' }}</div>
@@ -52,19 +52,19 @@
     <div class="stats-category">
       <h2>Some statistics on your most popular posts</h2>
       <div class="row">
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ mostViewedArticleRatioToTotal.label }}</div>
               <div class="card-value">{{ mostViewedArticleRatioToTotal.value | number:'1.1-2':'en-US' }}%</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ mostReactedArticleRatioToTotal.label }}</div>
               <div class="card-value">{{ mostReactedArticleRatioToTotal.value | number:'1.1-2':'en-US' }}%</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ mostCommentedArticleRatioToTotal.label }}</div>
               <div class="card-value">{{ mostCommentedArticleRatioToTotal.value | number:'1.1-2':'en-US' }}%</div>
@@ -75,19 +75,19 @@
     <div class="stats-category">
       <h2>Relative weight of your most popular posts</h2>
       <div class="row">
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ percentageOfArticlesGiving80PercentOfViews.label }}</div>
               <div class="card-value">{{ percentageOfArticlesGiving80PercentOfViews.value | number:'1.1-2':'en-US' }}%</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ percentageOfArticlesGiving80PercentOfReactions.label }}</div>
               <div class="card-value">{{ percentageOfArticlesGiving80PercentOfReactions.value | number:'1.1-2':'en-US' }}%</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ percentageOfArticlesGiving80PercentOfComments.label }}</div>
               <div class="card-value">{{ percentageOfArticlesGiving80PercentOfComments.value | number:'1.1-2':'en-US' }}%</div>
@@ -95,19 +95,19 @@
         </div>
       </div>
       <div class="row">
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ percentageOfArticlesGiving95PercentOfViews.label }}</div>
               <div class="card-value">{{ percentageOfArticlesGiving95PercentOfViews.value | number:'1.1-2':'en-US' }}%</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ percentageOfArticlesGiving95PercentOfReactions.label }}</div>
               <div class="card-value">{{ percentageOfArticlesGiving95PercentOfReactions.value | number:'1.1-2':'en-US' }}%</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
               <div class="card-label">{{ percentageOfArticlesGiving95PercentOfComments.label }}</div>
               <div class="card-value">{{ percentageOfArticlesGiving95PercentOfComments.value | number:'1.1-2':'en-US' }}%</div>
@@ -118,41 +118,41 @@
     <div class="stats-category">
       <h2>Some statistics on your most popular tags</h2>
       <div class="row">
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
-              <div class="card-label">{{ mostCommentedTag.label }}: {{ mostCommentedTag.tag }}</div>
+              <div class="card-label">{{ mostCommentedTag.label }}: <div class="tag-name">#{{ mostCommentedTag.tag }}</div></div>
               <div class="card-value">{{ mostCommentedTag.value | number:'1.0':'en-US' }}</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
-              <div class="card-label">{{ mostReactedTag.label }}: {{ mostReactedTag.tag }}</div>
+              <div class="card-label">{{ mostReactedTag.label }}: <div class="tag-name">#{{ mostReactedTag.tag }}</div></div>
               <div class="card-value">{{ mostReactedTag.value | number:'1.0':'en-US' }}</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
-              <div class="card-label">{{ mostViewedTag.label }}: {{ mostViewedTag.tag }}</div>
+              <div class="card-label">{{ mostViewedTag.label }}: <div class="tag-name">#{{ mostViewedTag.tag }}</div></div>
               <div class="card-value">{{ mostViewedTag.value | number:'1.0':'en-US' }}%</div>
             </div>
         </div>
       </div>
       <div class="row">
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
-              <div class="card-label">{{ tagWithMostCommentsPerArticle.label }}: {{ tagWithMostCommentsPerArticle.tag }}</div>
+              <div class="card-label">{{ tagWithMostCommentsPerArticle.label }}: <div class="tag-name">#{{ tagWithMostCommentsPerArticle.tag }}</div></div>
               <div class="card-value">{{ tagWithMostCommentsPerArticle.value | number:'1.0-2':'en-US' }}</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
-              <div class="card-label">{{ tagWithMostReactionsPerArticle.label }}: {{ tagWithMostReactionsPerArticle.tag }}</div>
+              <div class="card-label">{{ tagWithMostReactionsPerArticle.label }}: <div class="tag-name">#{{ tagWithMostReactionsPerArticle.tag }}</div></div>
               <div class="card-value">{{ tagWithMostReactionsPerArticle.value | number:'1.0-2':'en-US' }}</div>
             </div>
         </div>
-        <div class="column">
+        <div class="column" style="width: 33%;">
             <div class="card">
-              <div class="card-label">{{ tagWithMostViewsPerArticle.label }}: {{ tagWithMostViewsPerArticle.tag }}</div>
+              <div class="card-label">{{ tagWithMostViewsPerArticle.label }}: <div class="tag-name">#{{ tagWithMostViewsPerArticle.tag }}</div></div>
               <div class="card-value">{{ tagWithMostViewsPerArticle.value | number:'1.0-2':'en-US' }}</div>
             </div>
         </div>
