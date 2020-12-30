@@ -1,7 +1,3 @@
-.main-page {
-  background-color: lightgray;
-}
-
 .card {
   padding: 2em;
   background-color: whitesmoke;
@@ -17,19 +13,6 @@
   text-align: center;
   font-weight: bold;
   font-size: x-large;
-}
-
-.stats-category {
-  padding-top: 1em;
-  padding-bottom: 2em;
-}
-
-.h2 {
-  padding-bottom: 0.5em;
-}
-
-.form-control {
-  background-color: whitesmoke;
 }
 
 .tag-name {

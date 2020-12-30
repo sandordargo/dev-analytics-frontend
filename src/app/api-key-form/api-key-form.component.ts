@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import {StatsService} from '../stats.service';
-import {MainStatisticsComponent} from '../main-statistics/main-statistics.component';
 import StatsElement from '../StatsElement';
 import TagStatsElement from '../TagStatsElement';
+import { NumberFormat } from '../NumberFormat';
 
 @Component({
   selector: 'app-api-key-form',
@@ -14,7 +14,6 @@ import TagStatsElement from '../TagStatsElement';
 export class ApiKeyFormComponent implements OnInit {
 
   form: FormGroup;
-  msc: MainStatisticsComponent;
   x = 0;
   content: any;
   jsonContent: any;
@@ -41,12 +40,13 @@ export class ApiKeyFormComponent implements OnInit {
   tagWithMostCommentsPerArticle: any;
   tagWithMostReactionsPerArticle: any;
   tagWithMostViewsPerArticle: any;
+  percentageFormat = NumberFormat.Percentage;
+  normalFormat = NumberFormat.Normal;
 
   constructor(public fb: FormBuilder, private statsService: StatsService) {
     this.form = fb.group({
       apiKey: ['']
     });
-    this.msc = new MainStatisticsComponent();
   }
 
   ngOnInit(): void {
