@@ -1,0 +1,25 @@
+<div class="stats-category" *ngIf="loaded">
+  <h2>Some statistics on your most popular tags</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <app-tag-stats-card [statsElement]="mostCommentedTag" [numberFormat]="normalFormat"></app-tag-stats-card>
+    </div>
+    <div class="col-sm-4">
+      <app-tag-stats-card [statsElement]="mostReactedTag" [numberFormat]="normalFormat"></app-tag-stats-card>
+    </div>
+    <div class="col-sm-4">
+      <app-tag-stats-card [statsElement]="mostViewedTag" [numberFormat]="normalFormat"></app-tag-stats-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <app-tag-stats-card [statsElement]="tagWithMostCommentsPerArticle" [numberFormat]="normalFormat"></app-tag-stats-card>
+    </div>
+    <div class="col-sm-4">
+      <app-tag-stats-card [statsElement]="tagWithMostReactionsPerArticle" [numberFormat]="normalFormat"></app-tag-stats-card>
+    </div>
+    <div class="col-sm-4">
+      <app-tag-stats-card [statsElement]="tagWithMostViewsPerArticle" [numberFormat]="normalFormat"></app-tag-stats-card>
+    </div>
+  </div>
+</div>

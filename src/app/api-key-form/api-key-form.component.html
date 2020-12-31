@@ -19,88 +19,9 @@
   <button type="button"
     class="btn btn-primary"
     (click)="getStats()">Get my stats!</button>
-  <div [hidden]="!loaded">
-    <div class="stats-category">
-      <h2>High level statistics</h2>
-      <div class="row">
-          <div class="column" style="width: 25%;">
-            <app-stats-card [statsElement]="articlesWritten" [numberFormat]="normalFormat"></app-stats-card>
-          </div>
-          <div class="column" style="width: 25%;">
-            <app-stats-card [statsElement]="totalViews" [numberFormat]="normalFormat"></app-stats-card>
-          </div>
-          <div class="column" style="width: 25%;">
-            <app-stats-card [statsElement]="totalReactions" [numberFormat]="normalFormat"></app-stats-card>
-          </div>
-          <div class="column" style="width: 25%;">
-            <app-stats-card [statsElement]="totalComments" [numberFormat]="normalFormat"></app-stats-card>
-          </div>
-      </div>
+    <div *ngIf="loaded">
+      <app-post-stats [postAnalyticsJson]="jsonContent['article_analytics']"></app-post-stats>
+      <app-tag-stats [tagAnalyticsJson]="jsonContent['tag_analytics']"></app-tag-stats>
     </div>
-    <div class="stats-category">
-      <h2>Some statistics on your most popular posts</h2>
-      <div class="row">
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="mostViewedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="mostReactedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="mostCommentedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-      </div>
-    </div>
-    <div class="stats-category">
-      <h2>Relative weight of your most popular posts</h2>
-      <div class="row">
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="percentageOfArticlesGiving80PercentOfViews" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="percentageOfArticlesGiving80PercentOfReactions" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="percentageOfArticlesGiving80PercentOfComments" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="percentageOfArticlesGiving95PercentOfViews" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="percentageOfArticlesGiving95PercentOfReactions" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-stats-card [statsElement]="percentageOfArticlesGiving95PercentOfComments" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
-        </div>
-      </div>
-    </div>
-    <div class="stats-category">
-      <h2>Some statistics on your most popular tags</h2>
-      <div class="row">
-        <div class="column" style="width: 33%;">
-          <app-tag-stats-card [statsElement]="mostCommentedTag" [numberFormat]="normalFormat"></app-tag-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-tag-stats-card [statsElement]="mostReactedTag" [numberFormat]="normalFormat"></app-tag-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-tag-stats-card [statsElement]="mostViewedTag" [numberFormat]="normalFormat"></app-tag-stats-card>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column" style="width: 33%;">
-          <app-tag-stats-card [statsElement]="tagWithMostCommentsPerArticle" [numberFormat]="percentageFormat" quantifier='%'></app-tag-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-tag-stats-card [statsElement]="tagWithMostReactionsPerArticle" [numberFormat]="percentageFormat" quantifier='%'></app-tag-stats-card>
-        </div>
-        <div class="column" style="width: 33%;">
-          <app-tag-stats-card [statsElement]="tagWithMostViewsPerArticle" [numberFormat]="percentageFormat" quantifier='%'></app-tag-stats-card>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 </div>

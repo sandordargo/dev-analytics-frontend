@@ -9,13 +9,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StatsCardComponent } from './stats-card/stats-card.component';
 import { TagStatsCardComponent } from './tag-stats-card/tag-stats-card.component';
+import { TagStatsComponent } from './tag-stats/tag-stats.component';
+import { PostStatsComponent } from './post-stats/post-stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApiKeyFormComponent,
     StatsCardComponent,
-    TagStatsCardComponent
+    TagStatsCardComponent,
+    TagStatsComponent,
+    PostStatsComponent
   ],
   imports: [
     BrowserModule,

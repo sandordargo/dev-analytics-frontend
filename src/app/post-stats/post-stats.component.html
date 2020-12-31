@@ -1,0 +1,58 @@
+<div *ngIf="loaded">
+  <div class="stats-category">
+    <h2>High level statistics</h2>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <app-stats-card [statsElement]="articlesWritten" [numberFormat]="normalFormat"></app-stats-card>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <app-stats-card [statsElement]="totalViews" [numberFormat]="normalFormat"></app-stats-card>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <app-stats-card [statsElement]="totalReactions" [numberFormat]="normalFormat"></app-stats-card>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <app-stats-card [statsElement]="totalComments" [numberFormat]="normalFormat"></app-stats-card>
+        </div>
+    </div>
+  </div>
+  <div class="stats-category">
+    <h2>Some statistics on your most popular posts</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="mostViewedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="mostReactedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="mostCommentedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+    </div>
+  </div>
+  <div class="stats-category">
+    <h2>Relative weight of your most popular posts</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="percentageOfArticlesGiving80PercentOfViews" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="percentageOfArticlesGiving80PercentOfReactions" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="percentageOfArticlesGiving80PercentOfComments" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="percentageOfArticlesGiving95PercentOfViews" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="percentageOfArticlesGiving95PercentOfReactions" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="percentageOfArticlesGiving95PercentOfComments" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
+      </div>
+    </div>
+  </div>
+</div>
