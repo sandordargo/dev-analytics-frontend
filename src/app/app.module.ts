@@ -11,6 +11,7 @@ import { StatsCardComponent } from './stats-card/stats-card.component';
 import { TagStatsCardComponent } from './tag-stats-card/tag-stats-card.component';
 import { TagStatsComponent } from './tag-stats/tag-stats.component';
 import { PostStatsComponent } from './post-stats/post-stats.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PostStatsComponent } from './post-stats/post-stats.component';
     StatsCardComponent,
     TagStatsCardComponent,
     TagStatsComponent,
-    PostStatsComponent
+    PostStatsComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,

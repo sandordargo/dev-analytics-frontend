@@ -1,0 +1,11 @@
+<ngb-accordion #acc="ngbAccordion" >
+  <ngb-panel [title]="header">
+    <ng-template ngbPanelContent>
+      <ul class="list-group list-group-flush" *ngFor="let article of articleList">
+        <li class="list-group-item">
+      <a [href]="article.url">{{ article.title }}</a> | Views: {{ article.views | number: '1.0':'en-US' }} | Reactions: {{ article.reactions | number: '1.0':'en-US' }} | Comments: {{ article.comments | number: '1.0':'en-US' }}
+    </li>
+    </ul>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

@@ -29,6 +29,9 @@
         <app-stats-card [statsElement]="mostCommentedArticleRatioToTotal" [numberFormat]="percentageFormat" quantifier='%'></app-stats-card>
       </div>
     </div>
+    <app-article-list [header]="mostViewedArticlesHeader" [articleList]="fiveMostViewedArticles"></app-article-list>
+    <app-article-list [header]="mostReactedArticlesHeader" [articleList]="fiveMostReactedArticles"></app-article-list>
+    <app-article-list [header]="mostCommentedArticlesHeader" [articleList]="fiveMostCommentedArticles"></app-article-list>
   </div>
   <div class="stats-category">
     <h2>Relative weight of your most popular posts</h2>

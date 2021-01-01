@@ -28,6 +28,13 @@ export class PostStatsComponent implements OnChanges {
   percentageOfArticlesGiving95PercentOfReactions: any;
   percentageOfArticlesGiving95PercentOfComments: any;
 
+  fiveMostViewedArticles: any;
+  mostViewedArticlesHeader = 'Expand for the 5 most viewed articles...';
+  fiveMostReactedArticles: any;
+  mostReactedArticlesHeader = 'Expand for the 5 most reacted articles...';
+  fiveMostCommentedArticles: any;
+  mostCommentedArticlesHeader = 'Expand for the 5 most commented articles...';
+
   percentageFormat = NumberFormat.Percentage;
   normalFormat = NumberFormat.Normal;
 
@@ -75,6 +82,15 @@ export class PostStatsComponent implements OnChanges {
           }
           if (key === 'percentageOfArticlesGiving95PercentOfComments') {
             this.percentageOfArticlesGiving95PercentOfComments = statsElement;
+          }
+          if (key === 'fiveMostViewedArticles') {
+            this.fiveMostViewedArticles = this.postAnalyticsJson[key];
+          }
+          if (key === 'fiveMostReactedArticles') {
+            this.fiveMostReactedArticles = this.postAnalyticsJson[key];
+          }
+          if (key === 'fiveMostCommentedArticles') {
+            this.fiveMostCommentedArticles = this.postAnalyticsJson[key];
           }
         });
       this.loaded = true;
