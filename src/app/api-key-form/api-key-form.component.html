@@ -18,10 +18,12 @@
   </form>
   <button type="button"
     class="btn btn-primary"
-    (click)="getStats()">Get my stats!</button>
-    <div *ngIf="loaded">
-      <app-post-stats [postAnalyticsJson]="jsonContent['article_analytics']"></app-post-stats>
-      <app-tag-stats [tagAnalyticsJson]="jsonContent['tag_analytics']"></app-tag-stats>
-    </div>
+    (click)="getStats()">Get my stats!
+  </button>
+  <ngx-loading-bar diameter='2em'></ngx-loading-bar>
+  <div *ngIf="loaded">
+    <app-post-stats [postAnalyticsJson]="jsonContent['article_analytics']"></app-post-stats>
+    <app-tag-stats [tagAnalyticsJson]="jsonContent['tag_analytics']"></app-tag-stats>
+  </div>
 </div>
 </div>

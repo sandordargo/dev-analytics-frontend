@@ -13,6 +13,8 @@ import { TagStatsComponent } from './tag-stats/tag-stats.component';
 import { PostStatsComponent } from './post-stats/post-stats.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    LoadingBarHttpClientModule,
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]
