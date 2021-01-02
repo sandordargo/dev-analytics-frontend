@@ -14,11 +14,17 @@ export class TagStatsComponent implements OnChanges {
   loaded = false;
 
   mostCommentedTag: any;
+  fiveMostViewedTags: any;
   mostReactedTag: any;
+  fiveMostCommentedTags: any;
   mostViewedTag: any;
+  fiveMostReactedTags: any;
   tagWithMostCommentsPerArticle: any;
+  fiveTagsWithMostViewsPerArticle: any;
   tagWithMostReactionsPerArticle: any;
+  fiveTagsWithMostReactionsPerArticle: any;
   tagWithMostViewsPerArticle: any;
+  fiveTagsWithMostCommentsPerArticle: any;
   percentageFormat = NumberFormat.Percentage;
   normalFormat = NumberFormat.Normal;
 
@@ -48,6 +54,25 @@ export class TagStatsComponent implements OnChanges {
         if (key === 'tagWithMostViewsPerArticle') {
           this.tagWithMostViewsPerArticle = tagStatsElement;
         }
+        if (key === 'fiveMostViewedTags') {
+          this.fiveMostViewedTags = this.tagAnalyticsJson[key];
+        }
+        if (key === 'fiveMostCommentedTags') {
+          this.fiveMostCommentedTags = this.tagAnalyticsJson[key];
+        }
+        if (key === 'fiveMostReactedTags') {
+          this.fiveMostReactedTags = this.tagAnalyticsJson[key];
+        }
+        if (key === 'fiveTagsWithMostViewsPerArticle') {
+          this.fiveTagsWithMostViewsPerArticle = this.tagAnalyticsJson[key];
+        }
+        if (key === 'fiveTagsWithMostReactionsPerArticle') {
+          this.fiveTagsWithMostReactionsPerArticle = this.tagAnalyticsJson[key];
+        }
+        if (key === 'fiveTagsWithMostCommentsPerArticle') {
+          this.fiveTagsWithMostCommentsPerArticle = this.tagAnalyticsJson[key];
+        }
+
         // this.tagStats.push(tagStatsElement);
       });
       this.loaded = true;

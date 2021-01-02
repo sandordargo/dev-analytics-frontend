@@ -10,6 +10,7 @@ export class TagStatsCardComponent implements OnInit {
   @Input() public statsElement = new TagStatsElement('', '', '');
   @Input() public numberFormat = '1.0';
   @Input() public quantifier = '';
+  @Input() public tagList: any;
 
   constructor() { }
 

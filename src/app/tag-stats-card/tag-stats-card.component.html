@@ -1,4 +1,15 @@
 <div class="card">
   <div class="card-label">{{ statsElement.label }}: <div class="tag-name">#{{ statsElement.tag }}</div></div>
   <div class="card-value"> {{ statsElement.value | number: numberFormat:'en-US' }}{{ quantifier }}</div>
+  <ngb-accordion #acc="ngbAccordion" >
+    <ngb-panel title="Click for the top 5...">
+      <ng-template ngbPanelContent>
+        <ul class="list-group list-group-flush" *ngFor="let tag of tagList">
+          <li class="list-group-item">
+        <a [href]="'https://dev.to/t/' + tag.name">#{{ tag.name }}</a> | Views: {{ tag.views | number: '1.0':'en-US' }} | Reactions: {{ tag.reactions | number: '1.0':'en-US' }} | Comments: {{ tag.comments | number: '1.0':'en-US' }} | Number of articles: {{ tag.numberOfArticles | number: '1.0':'en-US' }}
+      </li>
+      </ul>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
