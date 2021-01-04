@@ -15,6 +15,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AboutModalComponent } from './about-modal/about-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TagStatsCardComponent,
     TagStatsComponent,
     PostStatsComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    AboutModalComponent
   ],
   imports: [
     BrowserModule,

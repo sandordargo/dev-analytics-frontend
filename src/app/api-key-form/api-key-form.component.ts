@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import {StatsService} from '../stats.service';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AboutModalComponent } from '../about-modal/about-modal.component';
 
 
 @Component({
@@ -21,7 +23,7 @@ export class ApiKeyFormComponent implements OnInit {
   iconToShow = faEyeSlash;
   inputType = 'password';
 
-  constructor(public fb: FormBuilder, private statsService: StatsService) {
+  constructor(public fb: FormBuilder, private statsService: StatsService, private modalService: NgbModal) {
     this.form = fb.group({
       apiKey: ['']
     });
@@ -51,6 +53,10 @@ export class ApiKeyFormComponent implements OnInit {
       this.loaded = true;
     });
 
+  }
+
+  open(): void {
+    this.modalService.open(AboutModalComponent);
   }
 
 }

@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title">Hi there!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>Thanks for trying DevAnalytics!</p>
+  <p>It helps you to get some interesting insights on how your articles are performing on DEV
+    and what your most successful tags are!
+  </p>
+  <p>If you are interested in the source code, <a href="https://github.com/sandordargo/dev-analytics-frontend" target="_blank">click here</a> for the frontend and <a href="https://github.com/sandordargo/dev-analytics-backend" target="_blank">here</a> for the backend.
+    If you want to try the command line version, check out <a href="https://github.com/sandordargo/dev-to-analytics" target="_blank">this Github repository</a>.
+  </p>
+  <p>If you liked the tool, give it a star on Github and <a class="twitter-share-button"
+    href="https://twitter.com/intent/tweet" target="_blank">
+  tweet</a> about it!<a href="https://github.com/sandordargo/dev-to-analytics" target="_blank"></a></p>
+  <p>Cheers,</p>
+  <p><a href="https://dev.to/sandordargo" target="_blank">Sandor</a></p>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
