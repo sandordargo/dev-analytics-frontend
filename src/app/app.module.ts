@@ -14,6 +14,7 @@ import { PostStatsComponent } from './post-stats/post-stats.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     HttpClientModule,
     NgbModule,
     LoadingBarHttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]

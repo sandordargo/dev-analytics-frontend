@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import {StatsService} from '../stats.service';
+import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-api-key-form',
@@ -13,6 +15,11 @@ export class ApiKeyFormComponent implements OnInit {
   form: FormGroup;
   jsonContent: any;
   loaded = false;
+  faEyeSlash = faEyeSlash;
+  faEye = faEye;
+  showPassword = false;
+  iconToShow = faEyeSlash;
+  inputType = 'password';
 
   constructor(public fb: FormBuilder, private statsService: StatsService) {
     this.form = fb.group({
@@ -21,6 +28,18 @@ export class ApiKeyFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  showPass(): void {
+    console.log('button');
+    this.showPassword = !this.showPassword;
+    if (this.showPassword) {
+      this.iconToShow = faEye;
+      this.inputType = 'text';
+    } else {
+      this.iconToShow = faEyeSlash;
+      this.inputType = 'password';
+    }
   }
 
   getStats(): void {

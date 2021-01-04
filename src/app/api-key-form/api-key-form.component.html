@@ -8,12 +8,20 @@
   <div class="container">
   <p>Get some insight on how your articles perform</p>
   <p>If you don't have an API Key, go to <a href="https://dev.to/settings/account" target="_blank">your settings/account</a> and generate one</p>
+  <p><b>This API key is not supposed to share with anyone and DevAnalytics don't store it at all.</b></p>
   <form [formGroup]="form" novalidate autocomplete="off">
     <div class="form-group">
-      <input type="text" class="form-control" id="apiKey"
+      <div class="input-group">
+      <input [type]="inputType" class="form-control" id="apiKey"
           formControlName="apiKey"
           placeholder="Insert your DEV Api Key here"
           (keyup.Enter)="getStats()">
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <fa-icon [icon]="iconToShow" (click)="showPass()"></fa-icon>
+            </span>
+            </div>
+        </div>
     </div>
   </form>
   <button type="button"
