@@ -17,6 +17,7 @@ export class ApiKeyFormComponent implements OnInit {
   form: FormGroup;
   jsonContent: any;
   loaded = false;
+  error = false;
   faEyeSlash = faEyeSlash;
   faEye = faEye;
   showPassword = false;
@@ -45,14 +46,20 @@ export class ApiKeyFormComponent implements OnInit {
   }
 
   getStats(): void {
+    this.loaded = false;
+    this.error = false;
     const key = this.form.get('apiKey')?.value;
-    const reply = this.statsService.getStats(key);
-
-    reply.then(value => {
-      this.jsonContent = value;
-      this.loaded = true;
-    });
-
+    const reply = this.statsService.getStats(key).subscribe(
+      (response) => {
+        this.jsonContent = response;
+        this.loaded = true;
+        this.error = false;
+      },
+      (error) => {
+        this.loaded = false;
+        this.error = true;
+      }
+    );
   }
 
   open(): void {

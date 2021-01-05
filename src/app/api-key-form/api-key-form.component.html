@@ -30,6 +30,11 @@
     (click)="getStats()">Get my stats!
   </button>
   <ngx-loading-bar diameter='2em'></ngx-loading-bar>
+  <div *ngIf="error">
+    <ngb-alert [dismissible]="false" type="danger">
+      <strong>Failed to fetch content for the entered API key!</strong> Double check if you entered the right key. If still doesn't work, try again later and <a href="https://github.com/sandordargo/dev-analytics-frontend/issues">open an issue on Github.</a>
+    </ngb-alert>
+  </div>
   <div *ngIf="loaded">
     <app-post-stats [postAnalyticsJson]="jsonContent['article_analytics']"></app-post-stats>
     <app-tag-stats [tagAnalyticsJson]="jsonContent['tag_analytics']"></app-tag-stats>
