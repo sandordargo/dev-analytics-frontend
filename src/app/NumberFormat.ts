@@ -1,4 +1,4 @@
 export enum NumberFormat {
-  Normal = '1.0',
+  Normal = '1.0-0',
   Percentage = '1.0-2',
 }

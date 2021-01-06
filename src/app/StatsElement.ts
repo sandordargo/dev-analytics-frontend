@@ -30,6 +30,15 @@ const LABELS: {[name: string]: string} = {
   tagWithMostCommentsPerArticle: 'Tag having the most comments per article',
   tagWithMostReactionsPerArticle: 'Tag having the most reactions per article',
   tagWithMostViewsPerArticle: 'Tag having the most views per article',
+  averageViews: 'Average views per article',
+  averageComments: 'Average comments per article',
+  averageReactions: 'Average reactions per article',
+  averageViewsForTop80Percent: 'Average views per article for articles generating 80% of your views',
+  averageReactionsForTop80Percent: 'Average reactions per article for articles generating 80% of your reactions',
+  averageCommentsForTop80Percent: 'Average comments per article for articles generating 80% of your comments',
+  averageViewsForTop95Percent: 'Average views per article for articles generating 95% of your views',
+  averageReactionsForTop95Percent: 'Average reactions per article for articles generating 95% of your reactions',
+  averageCommentsForTop95Percent: 'Average comments per article for articles generating 95% of your comments',
 };
 
 // const TAG_LABELS: {[statsName: string]: {[name: string]: number}} = {

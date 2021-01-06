@@ -27,6 +27,16 @@ export class PostStatsComponent implements OnChanges {
   percentageOfArticlesGiving95PercentOfViews: any;
   percentageOfArticlesGiving95PercentOfReactions: any;
   percentageOfArticlesGiving95PercentOfComments: any;
+  averageViews: any;
+  averageComments: any;
+  averageReactions: any;
+  averageViewsForTop80Percent: any;
+  averageReactionsForTop80Percent: any;
+  averageCommentsForTop80Percent: any;
+  averageViewsForTop95Percent: any;
+  averageReactionsForTop95Percent: any;
+  averageCommentsForTop95Percent: any;
+
 
   fiveMostViewedArticles: any;
   mostViewedArticlesHeader = 'Expand for the 5 most viewed articles...';
@@ -91,6 +101,33 @@ export class PostStatsComponent implements OnChanges {
           }
           if (key === 'fiveMostCommentedArticles') {
             this.fiveMostCommentedArticles = this.postAnalyticsJson[key];
+          }
+          if (key === 'averageViews') {
+            this.averageViews = statsElement;
+          }
+          if (key === 'averageReactions') {
+            this.averageReactions = statsElement;
+          }
+          if (key === 'averageComments') {
+            this.averageComments = statsElement;
+          }
+          if (key === 'averageViewsForTop80Percent') {
+            this.averageViewsForTop80Percent = statsElement;
+          }
+          if (key === 'averageReactionsForTop80Percent') {
+            this.averageReactionsForTop80Percent = statsElement;
+          }
+          if (key === 'averageCommentsForTop80Percent') {
+            this.averageCommentsForTop80Percent = statsElement;
+          }
+          if (key === 'averageViewsForTop95Percent') {
+            this.averageViewsForTop95Percent = statsElement;
+          }
+          if (key === 'averageReactionsForTop95Percent') {
+            this.averageReactionsForTop95Percent = statsElement;
+          }
+          if (key === 'averageCommentsForTop95Percent') {
+            this.averageCommentsForTop95Percent = statsElement;
           }
         });
       this.loaded = true;

@@ -34,6 +34,42 @@
     <app-article-list [header]="mostCommentedArticlesHeader" [articleList]="fiveMostCommentedArticles"></app-article-list>
   </div>
   <div class="stats-category">
+    <h2>Some averages</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageViews" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageReactions" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageComments" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageViewsForTop80Percent" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageReactionsForTop80Percent" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageCommentsForTop80Percent" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageViewsForTop95Percent" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageReactionsForTop95Percent" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+      <div class="col-sm-4">
+        <app-stats-card [statsElement]="averageCommentsForTop95Percent" [numberFormat]="normalFormat"></app-stats-card>
+      </div>
+    </div>
+  </div>
+  <div class="stats-category">
     <h2>Relative weight of your most popular posts</h2>
     <div class="row">
       <div class="col-sm-4">
